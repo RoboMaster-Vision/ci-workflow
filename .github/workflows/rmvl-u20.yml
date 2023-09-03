@@ -1,11 +1,6 @@
 name: RMVL Ubuntu 20
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/rmvl-u20.yml'
   pull_request:
     branches:
       - main
