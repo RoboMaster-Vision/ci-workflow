@@ -20,8 +20,9 @@ jobs:
       run: cmake -B ${{github.workspace}}/build -DBUILD_TESTS=ON
 
     - name: Build RMVL
-      run: cmake --build ${{github.workspace}}/build
+      run: cmake --build ${{github.workspace}}/build --parallel 8
 
     - name: Test RMVL
-      working-directory: ${{github.workspace}}/build
-      run: ctest
+      run: |
+        cd ${{github.workspace}}/build
+        ctest
