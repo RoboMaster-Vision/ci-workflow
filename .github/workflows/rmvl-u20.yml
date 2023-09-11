@@ -6,11 +6,6 @@ on:
       - main
     paths:
       - '.github/workflows/rmvl-u20.yml'
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/rmvl-u20.yml'
   workflow_call:
 
 jobs:
