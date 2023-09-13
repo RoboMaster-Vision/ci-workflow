@@ -10,7 +10,7 @@ on:
 
 jobs:
   build_and_test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     container:
       image: registry.cn-hangzhou.aliyuncs.com/rm-vision/rmvl-u22:latest
     steps:
