@@ -12,7 +12,7 @@ jobs:
   build_and_test:
     runs-on: ubuntu-22.04
     container:
-      image: registry.cn-hangzhou.aliyuncs.com/rm-vision/rmvl-u22:latest
+      image: registry.cn-hangzhou.aliyuncs.com/cv-rmvl/rmvl-u22:latest
     steps:
     - uses: actions/checkout@v3
 
