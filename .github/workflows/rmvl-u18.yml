@@ -14,7 +14,9 @@ jobs:
     container:
       image: registry.cn-hangzhou.aliyuncs.com/cv-rmvl/rmvl-u18:latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
+      env:
+        ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
     - name: Configure RMVL by CMake 
       run: cmake -B {{github.workspace}}/build -DBUILD_TESTS=ON -DBUILD_OPEN62541=ON
