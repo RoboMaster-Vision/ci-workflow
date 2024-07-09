@@ -1,4 +1,4 @@
-name: RMVL Ubuntu 22
+name: GCC 12.3 support for RMVL
 
 on:
   pull_request:
@@ -20,7 +20,7 @@ jobs:
       run: cmake -B {{github.workspace}}/build -DBUILD_TESTS=ON -DBUILD_OPEN62541=ON
 
     - name: Build RMVL
-      run: cmake --build {{github.workspace}}/build --parallel 8
+      run: cmake --build {{github.workspace}}/build --parallel 4
 
     - name: Test RMVL
       run: |
