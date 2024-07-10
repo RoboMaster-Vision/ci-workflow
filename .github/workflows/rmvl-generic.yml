@@ -1,18 +1,18 @@
-name: Minimum supported version for RMVL
+name: Generic workflow for RMVL
 
 on:
   pull_request:
     branches:
       - main
     paths:
-      - '.github/workflows/rmvl-lowest.yml'
+      - '.github/workflows/rmvl-generic.yml'
   workflow_call:
 
 jobs:
   build_and_test:
     runs-on: ubuntu-22.04
     container:
-      image: registry.cn-hangzhou.aliyuncs.com/cv-rmvl/rmvl-lowest:latest
+      image: registry.cn-hangzhou.aliyuncs.com/cv-rmvl/rmvl-u22:latest
     steps:
     - uses: actions/checkout@v4
 
