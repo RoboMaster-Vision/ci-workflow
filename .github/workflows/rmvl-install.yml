@@ -9,7 +9,7 @@ on:
   workflow_call:
 
 jobs:
-  build_and_test:
+  build_install_uninstall:
     runs-on: ubuntu-22.04
     container:
       image: registry.cn-hangzhou.aliyuncs.com/cv-rmvl/rmvl-u22:latest
