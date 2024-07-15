@@ -15,10 +15,10 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Configure RMVL by CMake 
-      run: cmake -B {{github.workspace}}/build
+      run: cmake -B {{github.workspace}}/build -DBUILD_TESTS=ON
 
     - name: Build RMVL
-      run: cmake --build {{github.workspace}}/build --parallel 4 -DBUILD_TESTS=ON
+      run: cmake --build {{github.workspace}}/build --parallel 4
 
     - name: Test RMVL
       run: ctest --test-dir {{github.workspace}}/build
