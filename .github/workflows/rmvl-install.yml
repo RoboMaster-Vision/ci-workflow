@@ -11,10 +11,11 @@ on:
 jobs:
   build_install_uninstall:
     runs-on: ubuntu-22.04
-    container:
-      image: registry.cn-hangzhou.aliyuncs.com/cv-rmvl/rmvl-u22:latest
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: sudo apt install -y libeigen3-dev libopencv-dev
 
     - name: Configure RMVL by CMake 
       run: cmake -B {{github.workspace}}/build -DBUILD_EXTRA=OFF
@@ -23,7 +24,7 @@ jobs:
       run: cmake --build {{github.workspace}}/build --parallel 4
 
     - name: Install RMVL
-      run: cmake --install {{github.workspace}}/build
+      run: sudo cmake --install {{github.workspace}}/build
     
     - name: Uninstall RMVL
-      run: cmake --build {{github.workspace}}/build --target uninstall
+      run: sudo cmake --build {{github.workspace}}/build --target uninstall
