@@ -1,4 +1,4 @@
-name: Generic workflow for RMVL
+name: Generic workflow for RMVL 1.x and 2.x
 
 on:
   pull_request:

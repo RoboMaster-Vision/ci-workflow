@@ -1,4 +1,4 @@
-name: GCC 14 support for RMVL
+name: GCC 14 support for RMVL 1.x and 2.x
 
 on:
   pull_request:
@@ -25,7 +25,7 @@ jobs:
         sudo cp -r lib /usr/local
 
     - name: Configure RMVL by CMake 
-      run: cmake -B {{github.workspace}}/build -DBUILD_EXTRA=ON -DBUILD_TESTS=ON -DBUILD_OPEN62541=ON
+      run: cmake -B {{github.workspace}}/build -DBUILD_EXTRA=ON -DBUILD_TESTS=ON -DBUILD_OPEN62541=ON -DCMAKE_C_COMPILER=/usr/bin/gcc-14 -DCMAKE_CXX_COMPILER=/usr/bin/g++-14
 
     - name: Build RMVL
       run: cmake --build {{github.workspace}}/build --parallel 4

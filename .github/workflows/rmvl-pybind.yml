@@ -1,4 +1,4 @@
-name: Python bindings for RMVL
+name: Python bindings for RMVL 2.x
 
 on:
   pull_request:
@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: sudo apt install -y pybind11-dev
 
     - name: Configure RMVL by CMake 
       run: cmake -B {{github.workspace}}/build -DBUILD_PYTHON=ON

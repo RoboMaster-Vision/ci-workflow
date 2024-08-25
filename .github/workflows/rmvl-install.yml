@@ -1,4 +1,4 @@
-name: CMake install/uninstall support for RMVL
+name: CMake install/uninstall support for RMVL 1.x and 2.x
 
 on:
   pull_request:
