@@ -1,11 +1,11 @@
-name: Python bindings for RMVL 2.x
+name: No dependency for RMVL 2.x
 
 on:
   pull_request:
     branches:
       - main
     paths:
-      - '.github/workflows/rmvl-pybind.yml'
+      - '.github/workflows/rmvl-withoutdep-u22.yml'
   workflow_call:
 
 jobs:
@@ -14,11 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install dependencies
-      run: sudo apt install -y pybind11-dev
-
     - name: Configure RMVL by CMake 
-      run: cmake -B {{github.workspace}}/build -DBUILD_PYTHON=ON -DBUILD_OPEN62541=ON
+      run: cmake -B {{github.workspace}}/build -DBUILD_OPEN62541=ON -DBUILD_TESTS=ON
 
     - name: Build RMVL
       run: cmake --build {{github.workspace}}/build --parallel 4
+
+    - name: Test RMVL
+      run: ctest --test-dir {{github.workspace}}/build

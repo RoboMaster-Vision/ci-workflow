@@ -5,12 +5,12 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/rmvl-withoutdep.yml'
+      - '.github/workflows/rmvl-withoutdep-win.yml'
   workflow_call:
 
 jobs:
   build_and_test:
-    runs-on: ubuntu-22.04
+    runs-on: windows-2022
     steps:
     - uses: actions/checkout@v4
 
@@ -18,7 +18,7 @@ jobs:
       run: cmake -B {{github.workspace}}/build -DBUILD_OPEN62541=ON -DBUILD_TESTS=ON
 
     - name: Build RMVL
-      run: cmake --build {{github.workspace}}/build --parallel 4
+      run: cmake --build {{github.workspace}}/build --parallel 4 --config Release
 
     - name: Test RMVL
       run: ctest --test-dir {{github.workspace}}/build

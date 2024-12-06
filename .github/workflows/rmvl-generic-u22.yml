@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/rmvl-generic.yml'
+      - '.github/workflows/rmvl-generic-u22.yml'
   workflow_call:
 
 jobs:

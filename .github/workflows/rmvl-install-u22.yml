@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/rmvl-install.yml'
+      - '.github/workflows/rmvl-install-u22.yml'
   workflow_call:
 
 jobs:
@@ -13,9 +13,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
-
-    - name: Install dependencies
-      run: sudo apt install -y libeigen3-dev libopencv-dev
 
     - name: Configure RMVL by CMake 
       run: cmake -B {{github.workspace}}/build -DBUILD_EXTRA=OFF
