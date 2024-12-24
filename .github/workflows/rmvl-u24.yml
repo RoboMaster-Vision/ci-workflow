@@ -16,6 +16,7 @@ jobs:
 
     - name: Install dependencies
       run: |
+        sudo apt update
         sudo apt install -y libeigen3-dev libopencv-dev
         curl -SL https://github.com/microsoft/onnxruntime/releases/download/v1.18.1/onnxruntime-linux-x64-1.18.1.tgz -o onnxruntime-linux-x64-1.18.1.tgz
         tar -xf onnxruntime-linux-x64-1.18.1.tgz
